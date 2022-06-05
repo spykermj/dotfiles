@@ -46,6 +46,8 @@ set ruler
 set signcolumn=yes
 set nobackup
 set nowritebackup
+set digraph
+set undofile
 " Give more space for displaying messages
 set cmdheight=2
 
