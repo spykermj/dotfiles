@@ -76,6 +76,8 @@ augroup my_autogroup
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+" provide a reasonable way to get out of the interactive terminal
+tnoremap <Esc> <C-\><C-n>
 
 " after this line we have CoC specific configuration
 
