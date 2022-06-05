@@ -26,6 +26,9 @@ Plug 'gruvbox-community/gruvbox'
 " Plug 'nvim-treesitter/playground'
 " Plug 'romgrk/nvim-treesitter-context'
 
+" show changed lines with git
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 lua require('init')
