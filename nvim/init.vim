@@ -58,6 +58,8 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 let mapleader = " "
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
 nnoremap <leader>s :set spell!
 filetype plugin on
 syntax on
