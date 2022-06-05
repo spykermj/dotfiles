@@ -17,11 +17,13 @@ call plug#begin()
 " Make sure you use single quotes
 " Initialize plugin system
 Plug 'gruvbox-community/gruvbox'
-Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'hashivim/vim-terraform'
 Plug 'airblade/vim-gitgutter'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 inoremap kk <ESC>
