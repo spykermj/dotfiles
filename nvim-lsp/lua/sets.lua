@@ -33,6 +33,7 @@ vim.cmd [[
   inoremap kk <ESC>
   nnoremap <CR> :noh<CR><CR>
   colorscheme gruvbox
+  tnoremap <Esc> <C-\><C-n>
 ]]
 
 
