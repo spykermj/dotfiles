@@ -77,6 +77,7 @@ set signcolumn=yes
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
 set noerrorbells
+set timeoutlen=175
 
 "  Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
