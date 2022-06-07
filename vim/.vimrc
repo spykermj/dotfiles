@@ -25,7 +25,6 @@ call plug#begin()
 " Initialize plugin system
 Plug 'hashivim/vim-terraform'
 Plug 'vim/killersheep'
-Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 
 " show changed lines with git
@@ -62,6 +61,7 @@ set signcolumn=yes
 set digraph
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
+set noerrorbells
 
 "  Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
