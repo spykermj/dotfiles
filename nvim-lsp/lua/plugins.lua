@@ -30,5 +30,11 @@ Plug 'gruvbox-community/gruvbox'
 
 -- show changed lines with git
 Plug 'airblade/vim-gitgutter'
+
+-- insert paired brackets
 Plug 'jiangmiao/auto-pairs'
+
+-- git plugin that claims to be so awesome it should be illegal
+Plug 'tpope/vim-fugitive'
+
 vim.call('plug#end')
