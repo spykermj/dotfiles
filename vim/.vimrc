@@ -1,4 +1,4 @@
-" Install plug ------------------------------------------------------------ {{{
+" Install plug ----------------------------------------------------------" {{{
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -8,7 +8,7 @@ endif
 
 " }}}
 
-" Plugins ----------------------------------------------------------------- {{{
+" Plugins ---------------------------------------------------------------" {{{
 
 " vim-plug setup
 call plug#begin()
@@ -24,31 +24,24 @@ call plug#begin()
 " Make sure you use single quotes
 " Initialize plugin system
 Plug 'hashivim/vim-terraform'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'vim/killersheep'
-Plug 'morhetz/gruvbox'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-glaive'
-Plug 'google/vim-codefmt'
-Plug 'vim-syntastic/syntastic'
-Plug 'juliosueiras/vim-terraform-completion'
 Plug 'airblade/vim-gitgutter'
+Plug 'morhetz/gruvbox'
+
+" show changed lines with git
+Plug 'airblade/vim-gitgutter'
+
+" insert paired brackets
+Plug 'jiangmiao/auto-pairs'
+
+" git plugin that claims to be so awesome it should be illegal
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
 " }}}
 
-" Maps ---------------------------------------------------------------------{{{
-
-let g:ycm_auto_trigger = 1
-
-inoremap kk <ESC>
-nnoremap <CR> :noh<CR><CR>
-nnoremap <leader>s :set spell!
-
-" }}}
-
-" Sets  ------------------------------------------------------------------- {{{
+" Sets  ------------------------------------------------------------------" {{{
 
 set spelllang=en_gb
 set colorcolumn=50,72,80,100
@@ -69,25 +62,36 @@ set signcolumn=yes
 set digraph
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
+
+"  Nice menu when typing `:find *.py`
+set wildmode=longest,list,full
+set wildmenu
+"  Ignore files
+set wildignore += "*.pyc"
+set wildignore += "*_build/*"
+set wildignore += "**/coverage/*"
+set wildignore += "**/node_modules/*"
+set wildignore += "**/android/*"
+set wildignore += "**/ios/*"
+set wildignore += "**/.git/*"
+
 let mapleader = " "
 
 " }}}
 
-" Vimscript --------------------------------------------------------------- {{{
+" Maps ---------------------------------------------------------------------{{{
+
+inoremap kk <ESC>
+nnoremap <CR> :noh<CR><CR>
+noremap <leader>s :set spell!<CR>
+
+" }}}
+
+" Vimscript --------------------------------------------------------------" {{{
 
 filetype plugin on
 syntax on
 colorscheme gruvbox
-
-call glaive#Install()
-let g:ycm_language_server =
-  \ [
-  \   {
-  \     'name': 'terraform',
-  \     'cmdline': [ '/usr/local/bin/terraform-ls', 'serve' ],
-  \     'filetypes': [ 'terraform' ]
-  \   }
-  \ ]
 
 augroup autoformat_settings
     autocmd FileType bzl AutoFormatBuffer buildifier
@@ -109,7 +113,7 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-augroup my_autogroup
+augroup trim
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
