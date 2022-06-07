@@ -47,6 +47,9 @@ Plug 'google/vim-codefmt'
 " `:help :Glaive` for usage.
 Plug 'google/vim-glaive'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
 call glaive#Install()
@@ -59,6 +62,7 @@ set spelllang=en_gb
 set colorcolumn=50,72,80,100
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set autoindent
 set smartindent
 set noswapfile
 set scrolloff=8
@@ -275,7 +279,7 @@ noremap <leader>s :set spell!<CR>
 
 " Vimscript --------------------------------------------------------------- {{{
 
-filetype plugin on
+filetype plugin indent on
 syntax on
 colorscheme gruvbox
 
