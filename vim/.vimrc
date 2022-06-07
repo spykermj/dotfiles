@@ -69,13 +69,11 @@ set scrolloff=8
 set expandtab
 set number
 set relativenumber
-set hidden
 set noerrorbells
 set nohlsearch
 set incsearch
 set ruler
 set signcolumn=yes
-set digraph
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set list
 set noerrorbells
@@ -142,6 +140,9 @@ endif
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" use <S-Tab> to navigate to the previous completion
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -261,6 +262,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 inoremap kk <ESC>
 nnoremap <CR> :noh<CR><CR>
 noremap <leader>s :set spell!<CR>
+tnoremap kk <C-W>N
 
 " }}}
 
