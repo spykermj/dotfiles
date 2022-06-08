@@ -130,13 +130,7 @@ inoremap <silent><expr> <Tab>
     \ <SID>check_back_space() ? "\<Tab>" :
     \ coc#refresh()
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
+inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
