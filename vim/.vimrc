@@ -52,6 +52,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'fatih/vim-go'
 
+Plug 'tpope/vim-vinegar'
+
 call plug#end()
 
 call glaive#Install()
