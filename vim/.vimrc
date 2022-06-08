@@ -25,7 +25,7 @@ call plug#begin()
 " Initialize plugin system
 Plug 'hashivim/vim-terraform'
 Plug 'vim/killersheep'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " show changed lines with git
 Plug 'airblade/vim-gitgutter'
@@ -49,6 +49,8 @@ Plug 'google/vim-glaive'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'fatih/vim-go'
 
 call plug#end()
 
