@@ -79,7 +79,6 @@ set incsearch
 set ruler
 set signcolumn=yes
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set list
 set timeoutlen=175
 
 "  Nice menu when typing `:find *.py`
@@ -95,6 +94,9 @@ set wildignore += "**/ios/*"
 set wildignore += "**/.git/*"
 
 let mapleader = " "
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " }}}
 
@@ -256,6 +258,23 @@ inoremap kk <ESC>
 nnoremap <CR> :noh<CR><CR>
 noremap <leader>s :set spell!<CR>
 tnoremap kk <C-W>N
+
+" lt stands for list toggld
+nnoremap <silent> lt :set list!<CR>
+
+" easy buffer navigation
+nnoremap <silent> <leader>1 :bfirst<CR>
+nnoremap <silent> <leader>2 :bfirst<CR>:bn<CR>
+nnoremap <silent> <leader>3 :bfirst<CR>:2bn<CR>
+nnoremap <silent> <leader>4 :bfirst<CR>:3bn<CR>
+nnoremap <silent> <leader>5 :bfirst<CR>:4bn<CR>
+nnoremap <silent> <leader>6 :bfirst<CR>:5bn<CR>
+nnoremap <silent> <leader>7 :bfirst<CR>:6bn<CR>
+nnoremap <silent> <leader>8 :bfirst<CR>:7bn<CR>
+nnoremap <silent> <leader>9 :bfirst<CR>:8bn<CR>
+
+" git stage chunk
+nnoremap <silent> sh :GitGutterStageHunk<CR>
 
 " }}}
 
