@@ -256,11 +256,12 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 inoremap kk <ESC>
 nnoremap <CR> :noh<CR><CR>
-noremap <leader>s :set spell!<CR>
+" ts toggle spelling
+noremap ts :set spell!<CR>
 tnoremap kk <C-W>N
 
-" lt stands for list toggld
-nnoremap <silent> lt :set list!<CR>
+" tl stands for toggle list
+nnoremap <silent> tl :set list!<CR>
 
 " easy buffer navigation
 nnoremap <silent> <leader>1 :bfirst<CR>
@@ -272,9 +273,6 @@ nnoremap <silent> <leader>6 :bfirst<CR>:5bn<CR>
 nnoremap <silent> <leader>7 :bfirst<CR>:6bn<CR>
 nnoremap <silent> <leader>8 :bfirst<CR>:7bn<CR>
 nnoremap <silent> <leader>9 :bfirst<CR>:8bn<CR>
-
-" git stage chunk
-nnoremap <silent> sh :GitGutterStageHunk<CR>
 
 " }}}
 
