@@ -54,6 +54,11 @@ Plug 'fatih/vim-go'
 
 Plug 'tpope/vim-vinegar'
 
+" give undotree a try
+Plug 'mbbill/undotree'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
 call plug#end()
 
 call glaive#Install()
@@ -79,7 +84,26 @@ set incsearch
 set ruler
 set signcolumn=yes
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set timeoutlen=175
+set timeoutlen=500
+
+
+let g:undotreee_RelativeTimestamp = 1
+let g:undotree_ShortIndicators = 1
+let g:undotree_HelpLine = 1
+let g:undotree_WindowLayout = 2
+
+if has("persistent_undo")
+   let target_path = expand('~/.undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
 
 "  Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
@@ -274,6 +298,10 @@ nnoremap <silent> <leader>7 :bfirst<CR>:6bn<CR>
 nnoremap <silent> <leader>8 :bfirst<CR>:7bn<CR>
 nnoremap <silent> <leader>9 :bfirst<CR>:8bn<CR>
 
+" quicklist navigation
+noremap <silent> q :copen <CR>
+nnoremap <silent> ]q :cnext <CR>
+nnoremap <silent> [q :cprevious <CR>
 " }}}
 
 " Vimscript --------------------------------------------------------------- {{{
