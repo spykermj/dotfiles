@@ -85,6 +85,7 @@ set ruler
 set signcolumn=yes
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set timeoutlen=500
+set autowrite
 
 
 let g:undotreee_RelativeTimestamp = 1
@@ -121,6 +122,8 @@ let mapleader = " "
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:go_list_type = "quickfix"
 
 " }}}
 
@@ -299,7 +302,8 @@ nnoremap <silent> <leader>8 :bfirst<CR>:7bn<CR>
 nnoremap <silent> <leader>9 :bfirst<CR>:8bn<CR>
 
 " quicklist navigation
-noremap <silent> q :copen <CR>
+noremap <silent> <leader>o :copen <CR>
+noremap <silent> <leader>c :cclose <CR>
 nnoremap <silent> ]q :cnext <CR>
 nnoremap <silent> [q :cprevious <CR>
 " }}}
@@ -342,4 +346,11 @@ augroup filetype_vim
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
+" settings to improve the vim-go experience
+augroup vim_go
+    autocmd!
+    autocmd FileType go nmap <leader>b <Plug>(go-build)
+    autocmd FileType go nmap <leader>r <Plug>(go-run)
+    autocmd FileType go nmap <leader>t <Plug>(go-test)
+augroup END
 " }}}

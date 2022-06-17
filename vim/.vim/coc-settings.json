@@ -15,5 +15,8 @@
             },
             "settings": {}
         }
+    },
+    "yaml.schemas": {
+        "kubernetes": "/*.yaml"
     }
 }
