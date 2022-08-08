@@ -77,7 +77,6 @@ set noswapfile
 set scrolloff=8
 set expandtab
 set number
-set relativenumber
 set belloff=all
 set nohlsearch
 set incsearch
