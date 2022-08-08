@@ -59,6 +59,8 @@ Plug 'mbbill/undotree'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
+Plug 'google/vim-jsonnet'
+
 call plug#end()
 
 call glaive#Install()
