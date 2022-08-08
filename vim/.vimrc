@@ -59,6 +59,8 @@ Plug 'mbbill/undotree'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
+Plug 'google/vim-jsonnet'
+
 call plug#end()
 
 call glaive#Install()
@@ -77,7 +79,6 @@ set noswapfile
 set scrolloff=8
 set expandtab
 set number
-set relativenumber
 set belloff=all
 set nohlsearch
 set incsearch

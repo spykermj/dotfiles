@@ -14,6 +14,12 @@
                 }
             },
             "settings": {}
+        },
+        "jsonnet": {
+            "command": "jsonnet-language-server",
+            "args": ["-t"],
+            "rootPatterns": [".git/", "jsonnetfile.json"],
+            "filetypes": ["jsonnet", "libsonnet"]
         }
     },
     "yaml.schemas": {
