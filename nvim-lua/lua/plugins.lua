@@ -47,9 +47,9 @@ return require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   else
-    require('treesitterconfig')
-    require('coc')
-    require('colourscheme')
+    require('config.treesitter')
+    require('config.coc')
+    require('config.colourscheme')
   end
 end)
 
