@@ -27,7 +27,8 @@ vim.cmd[[
     endfunction
 ]]
 
-
+-- The rest of these settings may be useful but they have not yet been
+-- integrated
 -- 
 -- inoremap <silent><expr> <c-space> coc#refresh()
 -- inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
