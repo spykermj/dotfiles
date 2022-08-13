@@ -43,11 +43,6 @@ table.insert(set.wildignore, '**/.git/*')
 
 g.mapleader = " "
 
-local gset = vim.api.nvim_set_var
-
-gset('g:airline#extensions#tabline#enabled', 1)
-gset('g:airline#extensions#tabline#buffer_nr_show', 1)
-
 g.go_list_type = 'quickfix'
 
 g.undotree_RelativeTimestamp = 1

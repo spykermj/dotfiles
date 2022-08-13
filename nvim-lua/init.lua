@@ -13,5 +13,8 @@ end
 
 
 require('plugins')
-require('set')
-require('map')
+require('config.set')
+require('config.map')
+require('config.tidy')
+require('config.filetype')
+require('config.airline')
