@@ -1,17 +1,28 @@
 {
-    "coc.preferences.formatOnType": true,
-    "coc.preferences.formatOnSaveFiletypes": ["python", "go", "rust"],
+    "codeLens.enable": true,
     "languageserver": {
-         "terraform": {
-              "command": "terraform-ls",
-              "args": ["serve"],
-              "trace.server": "verbose",
-              "filetypes": [
-                  "terraform",
-                  "tf"
-              ],
-              "initializationOptions": {},
-              "settings": {}
-          }
+        "terraform": {
+            "command": "terraform-ls",
+            "args": ["serve"],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {
+                "experimentalFeatures": {
+                    "prefillRequiredFields": true
+                }
+            },
+            "settings": {}
+        },
+        "jsonnet": {
+            "command": "jsonnet-language-server",
+            "args": ["-t"],
+            "rootPatterns": [".git/", "jsonnetfile.json"],
+            "filetypes": ["jsonnet", "libsonnet"]
+        }
+    },
+    "yaml.schemas": {
+        "kubernetes": "/*.yaml"
     }
 }
