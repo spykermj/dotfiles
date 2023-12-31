@@ -11,6 +11,19 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'}
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
+
   use 'hashivim/vim-terraform'
   use 'gruvbox-community/gruvbox'
   use 'folke/tokyonight.nvim'
@@ -30,15 +43,9 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
 
-  use 'fatih/vim-go'
-
   use 'tpope/vim-vinegar'
 
   use 'mbbill/undotree'
-
-  use 'google/vim-jsonnet'
-
-  use {'neoclide/coc.nvim', branch = 'release'}
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
@@ -48,8 +55,7 @@ return require('packer').startup(function(use)
     require('packer').sync()
   else
     require('config.treesitter')
-    require('config.coc')
+    require('config.lsp')
     require('config.colourscheme')
   end
 end)
-
