@@ -207,4 +207,8 @@ mode "$mode_system" {
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen brightness
 
+
+# screenshot with selection
+bindsym $mod+Shift+Return exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
+
 exec --no-startup-id xrandr --output HDMI-A-0 --left-of eDP
