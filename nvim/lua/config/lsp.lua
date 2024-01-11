@@ -17,7 +17,15 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer', 'gopls', 'tflint', 'terraformls', 'pyright'},
+  ensure_installed = {
+    'tsserver',
+    'rust_analyzer',
+    'gopls',
+    'tflint',
+    'terraformls',
+    'pyright',
+    'angularls',
+  },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
