@@ -25,6 +25,7 @@ require('mason-lspconfig').setup({
     'terraformls',
     'pyright',
     'angularls',
+    'cssls',
   },
   handlers = {
     lsp_zero.default_setup,
