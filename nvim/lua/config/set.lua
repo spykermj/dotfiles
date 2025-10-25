@@ -3,9 +3,9 @@ local g = vim.g
 
 set.spelllang = "en_gb"
 set.colorcolumn = "50,72,80,100"
-set.tabstop = 4
-set.softtabstop = 4
-set.shiftwidth = 4
+set.tabstop = 2
+set.softtabstop = 2
+set.shiftwidth = 2
 set.autoindent = true
 set.smartindent = true
 set.swapfile = false
